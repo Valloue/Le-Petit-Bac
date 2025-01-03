@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit Bac - Création de partie</title>
+    <link rel="stylesheet" href="../css/create-game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Petit Bac</div>
+        <div class="nav-links">
+            <a href="/dashboard">Tableau de Bord</a>
+            <a href="/scores">Scores</a>
+            <a href="/rules">Règles</a>
+        </div>
+        <div class="nav-profile">
+            <span id="userPseudo"></span>
+            <button id="logoutBtn">Déconnexion</button>
+        </div>
+    </nav>
+
+    <div class="create-game-container">
+        <div class="create-game-card">
+            <!-- Section de partage (initialement cachée) -->
+            <div id="shareSection" class="share-section" style="display: none;">
+                <h2>Partie créée avec succès !</h2>
+                <div class="share-container">
+                    <div class="share-box">
+                        <label for="gameShareId">ID de la partie</label>
+                        <div class="share-input-group">
+                            <input type="text" id="gameShareId" readonly>
+                            <button id="copyShareId" class="copy-button">
+                                <span class="copy-text">Copier</span>
+                                <span class="copied-text">Copié !</span>
+                            </button>
+                        </div>
+                        <p class="share-info">Partagez cet ID avec vos amis pour qu'ils puissent rejoindre la partie</p>
+                    </div>
+                    <div class="share-actions">
+                        <button id="startGameBtn" class="primary-button">Commencer la partie</button>
+                        <button id="backToDashboard" class="secondary-button">Retour au tableau de bord</button>
+                    </div>
+                </div>
+            </div>
+
+            <h1>Créer une nouvelle partie</h1>
+            <form id="createGameForm">
+                <div class="form-section">
+                    <h2>Informations de base</h2>
+                    <div class="form-group">
+                        <label for="gameTitle">Nom de la partie</label>
+                        <input type="text" id="gameTitle" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Catégories</h2>
+                    <div class="categories-grid">
+                        <div class="category-item">
+                            <input type="checkbox" id="pays" value="pays">
+                            <label for="pays">Pays</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="villes" value="villes">
+                            <label for="villes">Villes</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="prenoms" value="prenoms">
+                            <label for="prenoms">Prénoms</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="metiers" value="metiers">
+                            <label for="metiers">Métiers</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="animaux" value="animaux">
+                            <label for="animaux">Animaux</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="fruits" value="fruits">
+                            <label for="fruits">Fruits/Légumes</label>
+                        </div>
+                        <div class="category-item custom-category">
+                            <input type="text" id="customCategory" placeholder="Ajouter une catégorie">
+                            <button type="button" id="addCustomCategory">+</button>
+                        </div>
+                    </div>
+                    <div id="customCategoriesList" class="custom-categories-list">
+                        <!-- Les catégories personnalisées seront ajoutées ici -->
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Timer</h2>
+                    <div class="timer-settings">
+                        <div class="switch-container">
+                            <label class="switch" for="timerEnabled">
+                                <input type="checkbox" id="timerEnabled" aria-label="Activer le timer">
+                                <span class="slider"></span>
+                            </label>
+                            <span>Activer le timer</span>
+                        </div>
+                        <div class="timer-input" id="timerInputContainer">
+                            <label for="timerDuration">Durée (en secondes)</label>
+                            <input type="number" id="timerDuration" min="30" value="60" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="cancelButton" class="secondary-button">Annuler</button>
+                    <button type="submit" class="primary-button">Créer la partie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../js/create-game.js"></script>
+</body>
+</html> 

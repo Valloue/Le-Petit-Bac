@@ -1,0 +1,115 @@
+/* Importer les styles communs */
+@import url('../css/common.css');
+
+.rules-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.rules-content {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rules-content h1 {
+    color: var(--primary-color);
+    margin: 0 0 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    font-size: 2rem;
+}
+
+.rules-content section {
+    margin-bottom: 3rem;
+}
+
+.rules-content section:last-child {
+    margin-bottom: 0;
+}
+
+.rules-content h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.rules-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 1rem 0;
+}
+
+.example-box {
+    background-color: var(--background);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+}
+
+.example-box h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.example-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.example-box li {
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+}
+
+.points-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.points-card {
+    background-color: var(--background);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.points-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.points-card h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.points-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .rules-container {
+        padding: 1rem;
+    }
+
+    .rules-content {
+        padding: 1.5rem;
+    }
+
+    .points-system {
+        grid-template-columns: 1fr;
+    }
+} 

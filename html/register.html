@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit Bac - Inscription</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Petit Bac</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" id="pseudo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" required>
+                <div class="password-requirements">
+                    <p>Le mot de passe doit contenir :</p>
+                    <ul>
+                        <li id="uppercase">Une majuscule</li>
+                        <li id="lowercase">Une minuscule</li>
+                        <li id="number">Un chiffre</li>
+                        <li id="special">Un caractère spécial</li>
+                        <li id="length">Au moins 10 caractères</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmer le mot de passe</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            <button type="submit">S'inscrire</button>
+        </form>
+        <p>Déjà inscrit ? <a href="/">Se connecter</a></p>
+    </div>
+    <script type="module" src="../js/register.js"></script>
+</body>
+</html> 

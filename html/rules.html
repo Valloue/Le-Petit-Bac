@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit Bac - Règles du jeu</title>
+    <link rel="stylesheet" href="../css/rules.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Petit Bac</div>
+        <div class="nav-links">
+            <a href="/dashboard">Tableau de Bord</a>
+            <a href="/scores">Scores</a>
+            <a href="/rules" class="active">Règles</a>
+        </div>
+        <div class="nav-profile">
+            <span id="userPseudo"></span>
+            <button id="logoutBtn">Déconnexion</button>
+        </div>
+    </nav>
+
+    <div class="rules-container">
+        <article class="rules-content">
+            <h1>Règles du Petit Bac</h1>
+            
+            <section>
+                <h2>Comment se déroule une partie de petit bac ?</h2>
+                <p>Avant de commencer une partie, les participants déterminent l'ensemble des catégories sur lesquelles ils devront trouver les mots correspondants. Cela peut être :</p>
+                <ul>
+                    <li>Villes</li>
+                    <li>Animaux</li>
+                    <li>Personnalités célèbres</li>
+                    <li>Pays</li>
+                    <li>Prénoms masculins ou féminins</li>
+                    <li>Métiers</li>
+                    <li>etc.</li>
+                </ul>
+                
+                <p>Chaque participant doit remplir le plus vite possible sa grille en trouvant pour chaque catégorie, le mot commençant par la lettre.</p>
+                
+                <div class="example-box">
+                    <h3>Exemple avec la lettre P :</h3>
+                    <ul>
+                        <li>Pays : Pologne</li>
+                        <li>Animaux : Panda</li>
+                        <li>Prénom Masculin : Patrick</li>
+                        <li>Métier : Pédiatre</li>
+                        <li>etc.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Système de points</h2>
+                <div class="points-system">
+                    <div class="points-card">
+                        <h3>2 points</h3>
+                        <p>Par mot trouvé si celui-ci est unique chez les participants</p>
+                    </div>
+                    <div class="points-card">
+                        <h3>1 point</h3>
+                        <p>Si le mot est donné par 2 joueurs</p>
+                    </div>
+                    <div class="points-card">
+                        <h3>0 point</h3>
+                        <p>Si le mot n'existe pas</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Comment gagner une partie de petit bac ?</h2>
+                <p>Le joueur qui a le plus de points à la fin de la partie gagne.</p>
+            </section>
+        </article>
+    </div>
+
+    <script type="module" src="../js/rules.js"></script>
+</body>
+</html> 

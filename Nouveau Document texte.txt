@@ -1,0 +1,33 @@
+quand je clique sur n'importe quel bouton, ca me renvoie a la page de connexion mais pas a la page voulu, peut tu y remédier ?
+
+ici, je souhaite qu'il y ai le pseudo du joueur afficher et pas son adresse email, et ca sur toutes les pages. 
+
+maintenant, peut tu revoit le visuel de l'application pour qu'elle soit plus moderne et plus attrayante ? 
+
+Maintenant je souhaite que le mot soit validé si et seulement si il est dans ce fichier : 
+
+je souhaite que quand l'app vérifie les mots elle ne fasse pas de différence entre les majuscules et les minuscules
+
+dans les résultats de la partie, je veux les résultats de chaque joueurs ayant joué a cette partie
+- joueurs {pseudo joueur 1} nombre de points total
+	catégorie 1 mot 1 points
+	catégorie 2 mot 2 points
+	catégorie 3 mot 3 points
+	ainsi de suite
+Le gagnant de la partie est {pseudo du joueur qui a le plus de points}
+
+"""Les mots de tpous les joueurs ne sont pas pris en compte """"
+
+Maintenant, dans la page "scores" je souhaite que l'orsque quand on clique sur le bouton :
+- Partie jouées, ca ouvre une page avec toutes les parties jouées
+- Victoires, ca ouvre une page avec toutes les parties jouées et gagné
+- Défaites, ca ouvre une page avec toutes les parties jouées et perdu
+
+Je souhaite que ces trois nouvelles pages aient chacune leur propre fichier js css et html
+
+Les trois boutons me renvoie a la page de connexion, ors je souhaite qu'ils me renvoie a leurs pages respectives 
+- Le bouton "Paries jouées" pour la page "played-games"
+- Le bouton "Victoires" pour la page "victoires"
+- Le bouton "Défaites" pour la page "defeats"
+
+Peut tu rendre je visuel des pages register et auth en adéquoition avec le reste de l'app
