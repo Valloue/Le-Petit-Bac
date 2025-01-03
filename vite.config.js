@@ -1,4 +1,6 @@
+import { defineConfig } from 'vite'
+
 export default defineConfig({
+  base: '/Le-Petit-Bac/',
   // ... autres configurations ...
-  base: '/Le-Petit-Bac/', // Remplacez par le nom de votre repo
 }) 
