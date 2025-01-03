@@ -16,6 +16,7 @@
     "firebase": "^10.8.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "vite": "^5.0.0"
   }
 } 
