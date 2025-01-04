@@ -15,8 +15,22 @@
     </div>
     
     <script type="module">
-        import { auth } from './js/config/firebase.js';
-        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "VOTRE_API_KEY",
+            authDomain: "VOTRE_AUTH_DOMAIN",
+            projectId: "VOTRE_PROJECT_ID",
+            storageBucket: "VOTRE_STORAGE_BUCKET",
+            messagingSenderId: "VOTRE_MESSAGING_SENDER_ID",
+            appId: "VOTRE_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
         // Vérifier l'état de l'authentification
         onAuthStateChanged(auth, (user) => {
