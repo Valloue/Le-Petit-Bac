@@ -1,11 +1,11 @@
-import { auth, db } from './config/firebase.js';
+import { auth, db } from '../config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { collection, query, where, onSnapshot, addDoc, updateDoc, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 // Vérification de l'authentification
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = './index.html';
+        window.location.href = '/';
     } else {
         sessionStorage.setItem('userId', user.uid);
         loadUserData(user.uid);
@@ -86,7 +86,7 @@ function createGameCard(game, gameId) {
             const gameDoc = await getDoc(doc(db, 'games', gameId));
             if (gameDoc.exists()) {
                 sessionStorage.setItem('currentGameId', gameId);
-                window.location.href = './game.html';
+                window.location.href = '/game';
             } else {
                 alert('Cette partie n\'existe pas ou a été supprimée');
             }
@@ -103,7 +103,7 @@ function createGameCard(game, gameId) {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = './index.html';
+        window.location.href = '/';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }
@@ -132,7 +132,7 @@ document.getElementById('joinGameBtn').addEventListener('click', async () => {
         if (gameData.participants.includes(auth.currentUser.uid)) {
             // Si l'utilisateur est déjà dans la partie, on le redirige simplement
             sessionStorage.setItem('currentGameId', gameId);
-            window.location.href = './game.html';
+            window.location.href = '/game';
             return;
         }
         
@@ -143,7 +143,7 @@ document.getElementById('joinGameBtn').addEventListener('click', async () => {
         
         // Rediriger vers la partie
         sessionStorage.setItem('currentGameId', gameId);
-        window.location.href = './game.html';
+        window.location.href = '/game';
     } catch (error) {
         console.error('Erreur lors de la jointure de la partie:', error);
         alert('Erreur lors de la jointure de la partie');

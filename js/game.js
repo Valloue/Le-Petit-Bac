@@ -1,4 +1,4 @@
-import { auth, db } from './config/firebase.js';
+import { auth, db } from '../config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { doc, getDoc, updateDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -32,7 +32,7 @@ async function loadDictionary() {
 // Vérification de l'authentification
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = './index.html';
+        window.location.href = '/';
     } else {
         await loadDictionary();
         await loadUserData(user.uid);
@@ -41,7 +41,7 @@ onAuthStateChanged(auth, async (user) => {
             // Nettoyer le sessionStorage après avoir chargé les données
             sessionStorage.removeItem('currentGameId');
         } else {
-            window.location.href = './dashboard.html';
+            window.location.href = '/dashboard';
         }
     }
 });
@@ -115,7 +115,7 @@ async function loadGameData(gameId) {
                 }
             } else {
                 alert('Cette partie n\'existe pas');
-                window.location.href = './dashboard.html';
+                window.location.href = '/dashboard';
             }
         }, (error) => {
             console.error('Erreur lors de l\'écoute de la partie:', error);
@@ -125,7 +125,7 @@ async function loadGameData(gameId) {
     } catch (error) {
         console.error('Erreur lors du chargement de la partie:', error);
         alert('Erreur lors du chargement de la partie');
-        window.location.href = './dashboard.html';
+        window.location.href = '/dashboard';
     }
 }
 
@@ -462,7 +462,7 @@ function startTimer(duration) {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = './index.html';
+        window.location.href = '/';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }

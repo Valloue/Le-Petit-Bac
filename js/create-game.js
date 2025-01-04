@@ -1,4 +1,4 @@
-import { auth, db } from './config/firebase.js';
+import { auth, db } from '../config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { collection, addDoc, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -157,16 +157,16 @@ function setupActionButtons(gameId) {
     
     startGameBtn.addEventListener('click', () => {
         sessionStorage.setItem('currentGameId', gameId);
-        window.location.href = './game.html';
+        window.location.href = '/game';
     });
     
     backToDashboard.addEventListener('click', () => {
-        window.location.href = './dashboard.html';
+        window.location.href = '/dashboard';
     });
 }
 
 cancelButton.addEventListener('click', () => {
-    window.location.href = './dashboard.html';
+    window.location.href = '/dashboard';
 });
 
 // Gestion de la déconnexion

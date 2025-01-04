@@ -1,4 +1,4 @@
-import { auth, db } from './config/firebase.js';
+import { auth, db } from '../config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { collection, query, where, getDocs, orderBy, limit, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -7,7 +7,7 @@ let currentUser = null;
 // Vérification de l'authentification
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = './index.html';
+        window.location.href = '/';
     } else {
         currentUser = user;
         loadUserData(user.uid);
@@ -166,7 +166,7 @@ document.getElementById('periodFilter').addEventListener('change', (e) => {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = './index.html';
+        window.location.href = '/';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }

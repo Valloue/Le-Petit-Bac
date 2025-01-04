@@ -1,4 +1,4 @@
-import { auth, db } from './config/firebase.js';
+import { auth, db } from '../config/firebase.js';
 import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -68,7 +68,7 @@ registerForm.addEventListener('submit', async (e) => {
             scores: []
         });
 
-        window.location.href = './dashboard.html';
+        window.location.href = '/dashboard';
     } catch (error) {
         alert('Erreur lors de l\'inscription : ' + error.message);
     }
