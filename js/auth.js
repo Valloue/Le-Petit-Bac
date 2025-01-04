@@ -11,7 +11,7 @@ loginForm.addEventListener('submit', async (e) => {
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = '/dashboard';
+        window.location.href = './dashboard.html';
     } catch (error) {
         alert('Erreur de connexion : ' + error.message);
     }
