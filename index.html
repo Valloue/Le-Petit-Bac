@@ -4,40 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirection...</title>
-    <script type="module">
-        import { auth } from './config/firebase.js';
-        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-
-        // Vérifier l'état de l'authentification
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // Si l'utilisateur est connecté, rediriger vers le dashboard
-                window.location.href = './dashboard.html';
-            } else {
-                // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
-                window.location.href = './auth.html';
-            }
-        });
-    </script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f3f4f6;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        
-        .loading {
-            color: #4f46e5;
-            font-size: 1.2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="loading">Chargement...</div>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <div class="loading">Chargement...</div>
+        <div class="error-message"></div>
+    </div>
+    
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>
