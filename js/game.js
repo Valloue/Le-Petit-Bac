@@ -115,7 +115,7 @@ async function loadGameData(gameId) {
                 }
             } else {
                 alert('Cette partie n\'existe pas');
-                window.location.href = '/dashboard';
+                window.location.href = './dashboard.html';
             }
         }, (error) => {
             console.error('Erreur lors de l\'écoute de la partie:', error);
@@ -125,7 +125,7 @@ async function loadGameData(gameId) {
     } catch (error) {
         console.error('Erreur lors du chargement de la partie:', error);
         alert('Erreur lors du chargement de la partie');
-        window.location.href = '/dashboard';
+        window.location.href = './dashboard.html';
     }
 }
 
@@ -462,7 +462,7 @@ function startTimer(duration) {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = '/';
+        window.location.href = './index.html';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }
