@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petit Bac - Scores</title>
-    <link rel="stylesheet" href="./css/scores.css">
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+    <title>Scores - Petit Bac</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/scores.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">Petit Bac</div>
+        <a href="./dashboard.html" class="nav-brand">Petit Bac</a>
         <div class="nav-links">
-            <a href="/dashboard">Tableau de Bord</a>
-            <a href="/scores" class="active">Scores</a>
-            <a href="/rules">Règles</a>
+            <a href="./rules.html">Règles</a>
+            <a href="./scores.html" class="active">Scores</a>
         </div>
         <div class="nav-profile">
             <span id="userPseudo"></span>
@@ -24,64 +21,9 @@
     </nav>
 
     <div class="scores-container">
-        <div class="leaderboard">
-            <h1>Classement Global</h1>
-            <div class="filters">
-                <label for="periodFilter">Période :</label>
-                <select id="periodFilter" aria-label="Sélectionner la période">
-                    <option value="all">Tout le temps</option>
-                    <option value="month">Ce mois</option>
-                    <option value="week">Cette semaine</option>
-                </select>
-            </div>
-            <table class="scores-table">
-                <thead>
-                    <tr>
-                        <th>Position</th>
-                        <th>Joueur</th>
-                        <th>Parties jouées</th>
-                        <th>Victoires</th>
-                        <th>Points totaux</th>
-                        <th>Moyenne</th>
-                    </tr>
-                </thead>
-                <tbody id="scoresTableBody">
-                    <!-- Les scores seront ajoutés ici dynamiquement -->
-                </tbody>
-            </table>
-        </div>
-
-        <div class="personal-stats">
-            <h2>Mes Statistiques</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>POSITION</h3>
-                    <p id="position">-</p>
-                </div>
-                <div class="stat-card">
-                    <h3>PARTIES JOUÉES</h3>
-                    <p id="gamesPlayed">-</p>
-                </div>
-                <div class="stat-card">
-                    <h3>VICTOIRES</h3>
-                    <p id="victories">-</p>
-                </div>
-                <div class="stat-card">
-                    <h3>DÉFAITES</h3>
-                    <p id="defeats">-</p>
-                </div>
-                <div class="stat-card">
-                    <h3>POINTS TOTAUX</h3>
-                    <p id="totalPoints">-</p>
-                </div>
-                <div class="stat-card">
-                    <h3>TAUX DE RÉUSSITE</h3>
-                    <p id="winRate">-</p>
-                </div>
-            </div>
-        </div>
+        <!-- Contenu des scores -->
     </div>
 
-    <script type="module" src="./js/scores.js"></script>
+    <script type="module" src="../js/scores.js"></script>
 </body>
 </html> 

@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petit Bac - Partie en cours</title>
-    <link rel="stylesheet" href="./css/game.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+    <title>Partie en cours - Petit Bac</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/game.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">Petit Bac</div>
+        <a href="./dashboard.html" class="nav-brand">Petit Bac</a>
         <div class="nav-links">
-            <a href="/dashboard">Tableau de Bord</a>
-            <a href="/scores">Scores</a>
-            <a href="/rules">Règles</a>
+            <a href="./rules.html">Règles</a>
+            <a href="./scores.html">Scores</a>
         </div>
         <div class="nav-profile">
             <span id="userPseudo"></span>
@@ -25,14 +21,9 @@
     </nav>
 
     <div class="game-container">
-        <div id="gameInfo" class="game-info">
-            <!-- Les informations de la partie seront ajoutées ici -->
-        </div>
-        <div id="gameContent" class="game-content">
-            <!-- Le contenu du jeu sera ajouté ici -->
-        </div>
+        <!-- Contenu du jeu -->
     </div>
 
-    <script type="module" src="./js/game.js"></script>
+    <script type="module" src="../js/game.js"></script>
 </body>
 </html> 
