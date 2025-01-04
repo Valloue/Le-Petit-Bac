@@ -68,7 +68,7 @@ registerForm.addEventListener('submit', async (e) => {
             scores: []
         });
 
-        window.location.href = '/dashboard';
+        window.location.href = './dashboard.html';
     } catch (error) {
         alert('Erreur lors de l\'inscription : ' + error.message);
     }

@@ -161,12 +161,12 @@ function setupActionButtons(gameId) {
     });
     
     backToDashboard.addEventListener('click', () => {
-        window.location.href = '/dashboard';
+        window.location.href = './dashboard.html';
     });
 }
 
 cancelButton.addEventListener('click', () => {
-    window.location.href = '/dashboard';
+    window.location.href = './dashboard.html';
 });
 
 // Gestion de la déconnexion

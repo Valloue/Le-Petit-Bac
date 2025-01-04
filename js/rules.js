@@ -5,7 +5,7 @@ import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-
 // Vérification de l'authentification
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = '/';
+        window.location.href = './index.html';
     } else {
         loadUserData(user.uid);
     }
@@ -23,7 +23,7 @@ async function loadUserData(userId) {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = '/';
+        window.location.href = './index.html';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }
