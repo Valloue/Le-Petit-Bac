@@ -7,7 +7,7 @@ let currentUser = null;
 // Vérification de l'authentification
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = '/';
+        window.location.href = '/Le-Petit-Bac/';
     } else {
         currentUser = user;
         loadUserData(user.uid);
@@ -166,7 +166,7 @@ document.getElementById('periodFilter').addEventListener('change', (e) => {
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = '/';
+        window.location.href = '/Le-Petit-Bac/';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }

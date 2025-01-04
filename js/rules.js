@@ -27,4 +27,4 @@ document.getElementById('logoutBtn').addEventListener('click', async () => {
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }
-}); 
+});
