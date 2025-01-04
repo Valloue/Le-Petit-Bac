@@ -1,4 +1,4 @@
-import { auth, db } from '../config/firebase.js';
+import { auth, db } from './config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { doc, getDoc, updateDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -32,7 +32,7 @@ async function loadDictionary() {
 // Vérification de l'authentification
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
-        window.location.href = '/';
+        window.location.href = './index.html';
     } else {
         await loadDictionary();
         await loadUserData(user.uid);
@@ -41,7 +41,7 @@ onAuthStateChanged(auth, async (user) => {
             // Nettoyer le sessionStorage après avoir chargé les données
             sessionStorage.removeItem('currentGameId');
         } else {
-            window.location.href = '/dashboard';
+            window.location.href = './dashboard.html';
         }
     }
 });

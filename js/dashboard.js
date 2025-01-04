@@ -1,11 +1,11 @@
-import { auth, db } from '../config/firebase.js';
+import { auth, db } from './config/firebase.js';
 import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { collection, query, where, onSnapshot, addDoc, updateDoc, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 // Vérification de l'authentification
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = '/';
+        window.location.href = './index.html';
     } else {
         sessionStorage.setItem('userId', user.uid);
         loadUserData(user.uid);
