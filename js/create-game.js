@@ -8,7 +8,7 @@ onAuthStateChanged(auth, async (user) => {
         // Vérifions d'abord si nous avons un userId dans le sessionStorage
         const storedUserId = sessionStorage.getItem('userId');
         if (!storedUserId) {
-            window.location.href = '/';
+            window.location.href = '/Le-Petit-Bac/';
             return;
         }
         // Si nous avons un userId stocké, continuons avec celui-ci
@@ -157,23 +157,23 @@ function setupActionButtons(gameId) {
     
     startGameBtn.addEventListener('click', () => {
         sessionStorage.setItem('currentGameId', gameId);
-        window.location.href = '/game';
+        window.location.href = '/Le-Petit-Bac/pages/game.html';
     });
     
     backToDashboard.addEventListener('click', () => {
-        window.location.href = './dashboard.html';
+        window.location.href = '/Le-Petit-Bac/pages/dashboard.html';
     });
 }
 
 cancelButton.addEventListener('click', () => {
-    window.location.href = './dashboard.html';
+    window.location.href = '/Le-Petit-Bac/pages/dashboard.html';
 });
 
 // Gestion de la déconnexion
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
         await signOut(auth);
-        window.location.href = '/';
+        window.location.href = '/Le-Petit-Bac/';
     } catch (error) {
         alert('Erreur lors de la déconnexion : ' + error.message);
     }
