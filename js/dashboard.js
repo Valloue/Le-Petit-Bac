@@ -148,4 +148,9 @@ document.getElementById('joinGameBtn').addEventListener('click', async () => {
         console.error('Erreur lors de la jointure de la partie:', error);
         alert('Erreur lors de la jointure de la partie');
     }
+});
+
+// Gestionnaire pour le bouton "Créer une partie"
+document.getElementById('createGameBtn').addEventListener('click', () => {
+    window.location.href = '/Le-Petit-Bac/pages/create-game.html';
 }); 
