@@ -125,9 +125,11 @@ createGameForm.addEventListener('submit', async (e) => {
         
         setupCopyButton(gameRef.id);
         setupActionButtons(gameRef.id);
+        window.location.href = '/Le-Petit-Bac/pages/game.html';
     } catch (error) {
         console.error('Erreur lors de la création de la partie:', error);
         alert('Erreur lors de la création de la partie');
+        window.location.href = '/Le-Petit-Bac/pages/dashboard.html';
     }
 });
 
