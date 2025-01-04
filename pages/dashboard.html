@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petit Bac - Tableau de Bord</title>
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Dashboard - Petit Bac</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">Petit Bac</div>
+        <a href="./dashboard.html" class="nav-brand">Petit Bac</a>
         <div class="nav-links">
-            <a href="/dashboard" class="active">Tableau de Bord</a>
-            <a href="/scores">Scores</a>
-            <a href="/rules">Règles</a>
+            <a href="./rules.html">Règles</a>
+            <a href="./scores.html">Scores</a>
         </div>
         <div class="nav-profile">
             <span id="userPseudo"></span>
@@ -25,56 +21,9 @@
     </nav>
 
     <div class="dashboard-container">
-        <div class="board-column">
-            <div class="column-header">
-                <h2>Parties en cours</h2>
-                <div class="header-actions">
-                    <button id="joinGameBtn" class="secondary-button">Rejoindre une partie</button>
-                    <a href="/create-game" class="new-game-btn">Nouvelle partie</a>
-                </div>
-            </div>
-            <div id="activeGames" class="games-list">
-                <!-- Les parties en cours seront ajoutées ici dynamiquement -->
-            </div>
-        </div>
-
-        <div class="board-column">
-            <div class="column-header">
-                <h2>Parties terminées</h2>
-            </div>
-            <div id="completedGames" class="games-list">
-                <!-- Les parties terminées seront ajoutées ici dynamiquement -->
-            </div>
-        </div>
+        <!-- Contenu du dashboard -->
     </div>
 
-    <!-- Modal pour créer une nouvelle partie -->
-    <div id="newGameModal" class="modal">
-        <div class="modal-content">
-            <h2>Nouvelle partie</h2>
-            <form id="newGameForm">
-                <div class="form-group">
-                    <label for="gameTitle">Nom de la partie</label>
-                    <input type="text" id="gameTitle" required>
-                </div>
-                <div class="form-group">
-                    <label>Catégories</label>
-                    <div class="categories-list">
-                        <label><input type="checkbox" value="pays"> Pays</label>
-                        <label><input type="checkbox" value="animaux"> Animaux</label>
-                        <label><input type="checkbox" value="prenoms"> Prénoms</label>
-                        <label><input type="checkbox" value="metiers"> Métiers</label>
-                        <label><input type="checkbox" value="villes"> Villes</label>
-                    </div>
-                </div>
-                <div class="modal-buttons">
-                    <button type="button" id="cancelNewGame">Annuler</button>
-                    <button type="submit">Créer</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script type="module" src="./js/dashboard.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
 </body>
 </html> 
